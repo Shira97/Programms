@@ -1,0 +1,30 @@
+// string comparison
+#include <stdio.h>
+
+#define gets(a) fgets(a, sizeof(a), stdin)
+
+int main()
+{
+	char arr1[100];
+	char arr2[100];
+	char *str1, *str2;
+	int a = 1;
+
+	gets(arr1);
+	str1 = arr1;
+	gets(arr2);
+	str2 = arr2;
+
+	for (; *str1 && *str2; str1++, str2++)
+	{
+		if (*str1 != *str2)
+		{
+			a = -1;
+			break;
+		}
+	}
+
+	printf("%d", a);
+	getchar();
+	return 0;
+}
